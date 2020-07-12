@@ -60,11 +60,15 @@
 		return
 	if(ishumanbasic(H) || iscatperson(H))
 		if(user.gender == FEMALE)
-			return pick('sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg')
+			return pick('sound/voice/human/femalescream_1.ogg', 'sound/voice/human/femalescream_2.ogg', 'sound/voice/human/femalescream_3.ogg', 'sound/voice/human/femalescream_4.ogg', 'sound/voice/human/femalescream_5.ogg')
 		else
+			if(prob(1))
+				return 'sound/voice/human/wilhelm_scream.ogg'
 			return pick('sound/voice/human/malescream_1.ogg', 'sound/voice/human/malescream_2.ogg', 'sound/voice/human/malescream_3.ogg', 'sound/voice/human/malescream_4.ogg', 'sound/voice/human/malescream_5.ogg')
 	else if(ismoth(H))
 		return 'sound/voice/moth/scream_moth.ogg'
+	else if(islizard(H)) //yogs start: adds lizard screams
+		return 'yogstation/sound/voice/lizardperson/lizard_scream.ogg' //yogs end
 
 
 /datum/emote/living/carbon/human/pale
